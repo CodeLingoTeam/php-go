@@ -343,7 +343,7 @@ func AddConstant(name string, val interface{}, namespace interface{}) error {
 		case reflect.Bool:
 			v := val.(bool)
 			var bv int8 = 1
-			if v == false {
+			if ! v {
 				bv = 0
 			}
 			C.zend_register_bool_constant_compat(modname, C.size_t(len(name)), C.zend_bool(bv),
